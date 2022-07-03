@@ -1,0 +1,35 @@
+---
+layout: page
+title: 加入我们
+---
+
+<p>
+  清华工研院细胞与基因治疗创新中心清华工业开发研究院在中关村生命科学园建设的，具有国际领先技术的细胞与基因治疗创新平台，面向细胞与基因治疗创新药的研发，打造符合GMP规范的关键技术研究、核心工艺研发、中试及产业化生产支撑的全链条，构建细胞与基因治疗全产业链发展业态，培育覆盖全产业链关键技术企业，致力于创造前沿生物医药产业新生态。
+</p>
+
+{% for dept in site.data.jobs %}
+{% for job in dept.jobs %}
+<div class="card block">
+  <div class="card-content">
+    <div class="notification is-light">
+      <p class="title is-4">{{ job.title }}</p>
+      <p class="subtitle is-6">@ {{ dept.name }}</p>
+    </div>
+
+    <div class="notification is-success is-light">
+      <div class="tag is-success is-medium">岗位职责</div>
+      <ol>{% for duty in job.duties %}<li>{{ duty }}</li>{% endfor %}</ol>
+    </div>
+
+    <div class="notification is-info is-light">
+      <div class="tag is-info is-medium">任职要求</div>
+      <ol>{% for requirement in job.requirements %}<li>{{ requirement }}</li>{% endfor %}</ol>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endfor %}
+
+<div class="notification is-link">
+  需求不局限于以上岗位，请拨打公司联系电话详细咨询。欢迎有志于同荷塘生华共同成长的优秀人才加入荷塘大家庭！
+</div>

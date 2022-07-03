@@ -1,0 +1,39 @@
+---
+layout: main
+---
+
+<section class="hero is-fullheight">
+  <div class="hero-video">
+    <video playsinline autoplay muted loop poster="{{ site.url }}/assets/images/index.jpg">
+      <source src="{{ site.url }}/assets/videos/index.mp4" type="video/mp4">
+    </video>
+    <div class="is-overlay" style="background-color: rgba(0, 0, 0, 0.382)"></div>
+  </div>
+
+  <div class="hero-head">
+    {% include navbar.html modifiers="is-cgtic-frosted" opposite_color=true %}
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-size-1-desktop is-size-2-touch">致力于细胞与基因治疗产业培育与创新</p>
+      <h2 class="subtitle is-size-3-desktop is-size-4-touch">清华工研院细胞与基因治疗创新中心</p>
+    </div>
+  </div>
+  <style>
+    .hero-body .title,
+    .hero-body .subtitle {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+  </style>
+
+  <div class="hero-foot p-4">
+    <div class="container has-text-centered has-text-light">
+      <span>版权所有 © 北京荷塘生华医疗科技有限公司</span>
+      <span class="has-text-grey-light has-text-weight-bold px-1">|</span>
+      <a class="has-text-link-light" href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: underline">
+        京ICP备2021009103号-1
+      </a>
+    </div>
+  </div>
+</section>

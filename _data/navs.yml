@@ -1,0 +1,31 @@
+- title: 解决方案
+  path: /cdmo
+  children:
+    - title: 病毒载体 CDMO 服务
+      path: /cdmo-virus
+    - title: 质粒 CDMO 服务
+      path: /cdmo-vector
+    - title: mRNA CDMO 服务
+      path: /cdmo-mrna
+    - title: 细胞治疗 CDMO 服务
+      path: /cdmo-cell
+- title: 质控与合规
+  children:
+    - title: 质量检测与增值服务
+      path: /quality-measure
+    - title: 质量控制与保证体系
+      path: /quality-control
+- title: 产业链
+  children:
+    - title: 细胞与基因治疗全产业链生态
+      path: /industry-cooperation
+    - title: 细胞与基因治疗产业链创新培育
+      path: /industry-incubation
+- title: 关于我们
+  children:
+    - title: 公司概况
+      path: /cgtic-about
+    - title: 加入我们
+      path: /cgtic-join
+    - title: 联系我们
+      path: /cgtic-contact

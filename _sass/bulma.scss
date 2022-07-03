@@ -1,0 +1,136 @@
+/*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
+@charset "utf-8";
+
+/*
+ * Import
+ */
+
+// Intial variables
+$black-ter:    hsl(0, 0%, 11%);
+$grey-darker:  hsl(0, 0%, 17%);
+$grey-dark:    hsl(0, 0%, 21%);
+
+// Derived variables
+$primary: purple;
+$navbar-height: 3.25rem;
+$navbar-item-img-max-height: 2.25rem;
+
+@import "bulma/utilities/_all";
+@import "bulma/base/_all";
+@import "bulma/elements/_all";
+@import "bulma/form/_all";
+@import "bulma/components/_all";
+@import "bulma/grid/_all";
+@import "bulma/helpers/_all";
+@import "bulma/layout/_all";
+
+/*
+ * Override
+ */
+
+// components/navbar
+.navbar {
+  .navbar-brand > .navbar-item:first-child img {
+    @media screen and (max-width: 499px) {
+      max-width: 35vw;
+    }
+  }
+
+  .navbar-burger span {
+    height: 2px;
+  }
+}
+
+// elements/content
+.content>p {
+  text-indent: 2em;
+
+  >img:first-child:last-child {
+    margin-left: -2em;
+  }
+}
+
+// layout/hero
+.hero {
+  .hero-video {
+
+    // Fit the video as `cover` instead of `contain`
+    video {
+      object-fit: cover;
+    }
+
+    // Show the poster instead of hiding
+    @include mobile {
+      display: block;
+    }
+  }
+}
+
+/*
+ * Improve
+ */
+
+.navbar.is-cgtic-frosted {
+  @mixin cgtic-frosted-background($alpha: 0.2) {
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, $alpha);
+  }
+
+  .navbar-burger {
+    color: $grey-lightest;
+  }
+
+  a.navbar-item,
+  .navbar-link {
+    color: $grey-lightest;
+    background-color: transparent;
+
+    &:focus,
+    &:hover,
+    &.is-active {
+      @include cgtic-frosted-background(0.4);
+    }
+  }
+
+  .navbar-link:not(.is-arrowless)::after {
+    border-color: $grey-light;
+  }
+
+  .navbar-dropdown {
+    border-top: 0;
+
+    a.navbar-item {
+
+      &:focus,
+      &:hover,
+      &.is-active {
+        @include cgtic-frosted-background(0.4);
+      }
+    }
+  }
+
+  @include touch {
+    .navbar-menu,
+    .dropdown-content {
+      @include cgtic-frosted-background;
+    }
+  }
+
+  @include desktop {
+    .navbar-item.has-dropdown {
+
+      &.is-active,
+      &.is-hoverable:focus,
+      &.is-hoverable:focus-within,
+      &.is-hoverable:hover {
+        .navbar-link {
+          @include cgtic-frosted-background;
+        }
+      }
+    }
+
+    .navbar-dropdown {
+      @include cgtic-frosted-background;
+    }
+  }
+}

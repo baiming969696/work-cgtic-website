@@ -1,0 +1,57 @@
+---
+layout: main
+body_modifier: has-spaced-navbar-fixed-top
+---
+
+{% include navbar.html modifiers="is-fixed-top-desktop" %}
+
+<header class="hero banner"></header>
+
+<section class="p-5 content container is-max-desktop">
+  <h1 class="title">{{ page.title }}</h1>
+
+  {{ content }}
+</section>
+
+<footer class="footer banner">
+  <div class="is-overlay"></div>
+  <div class="container is-max-desktop is-small has-text-light">
+    <div class="is-flex is-flex-direction-row is-justify-content-center">
+      <div class="m-5">
+        <div class="m-3">BD 电话：15600638856</div>
+        <div class="m-3">BD 邮箱：s.tan@cgtic.cn</div>
+        <div class="m-3">固定电话：010-80765899</div>
+        <div class="m-3">公司地址：北京市昌平区医科路 9 号院 1 号楼</div>
+      </div>
+      <div class="m-5">
+        <img src="{{ site.url }}/assets/images/icon-weixin-mp.png" style="height: 150px">
+      </div>
+    </div>
+    <div class="has-text-centered">
+      <span class="m-2">版权所有 © 北京荷塘生华医疗科技有限公司</span>
+      <a class="has-text-link-light" href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: underline">
+        京ICP备2021009103号-1
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  header.banner {
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('{{ site.url }}/assets/images/{{ page.path | split: "." | first | append: "_" }}banner-head.jpg');
+  }
+
+  footer.banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-image: url('{{ site.url }}/assets/images/{{ page.path | split: "." | first | append: "_" }}banner-foot.jpg');
+  }
+
+  footer.banner .is-overlay {
+    background-color: rgba(0, 0, 0, 0.382);
+  }
+</style>

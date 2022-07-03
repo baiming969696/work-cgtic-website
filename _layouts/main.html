@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ site.url }}/assets/images/icon-cgtic.png">
+  <link rel="apple-touch-icon" href="{{ site.url }}/assets/images/icon-cgtic.png">
+
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% endif %}">
+</head>
+<body class="{{ layout.body_modifier }}">
+  <link rel="stylesheet" href="{{ site.url }}/assets/main.css">
+  {{ content }}
+  <script src="{{ site.url }}/assets/main.js"></script>
+</body>
+</html>

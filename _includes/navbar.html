@@ -1,0 +1,72 @@
+<nav class="navbar is-spaced {{ include.modifiers }}">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ site.url }}/">
+        <img src="{{ site.url }}/assets/images/logo-cgtic-h{% if include.opposite_color %}-o{% endif %}.svg">
+        <span class="has-text-grey-light mx-2" style="font-size: 1.5rem">|</span>
+        <img src="{{ site.url }}/assets/images/logo-lotus-h{% if include.opposite_color %}-o{% endif %}.svg">
+      </a>
+
+      <span class="navbar-burger" data-target="navbarMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <div id="weixinQrcode" class="dropdown is-right is-hidden-desktop">
+        <!-- <div class="dropdown-trigger"> -->
+          <a class="navbar-item" data-target="weixinQrcode">
+            <span class="icon">
+              <img src="{{ site.url }}/assets/images/icon-weixin{% if include.opposite_color %}-o{% endif %}.svg">
+            </span>
+          </a>
+        <!-- </div> -->
+        <div class="dropdown-menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item">
+              <img src="{{ site.url }}/assets/images/icon-weixin-mp.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+
+        {% for l1 in site.data.navs %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link has-text-weight-bold" {% if l1.path %}href="{{ site.url }}{{ l1.path }}" {% endif %}>
+            {{ l1.title }}
+          </a>
+          <div class="navbar-dropdown is-right">
+            {% for l2 in l1.children %}
+            <a class="navbar-item has-text-weight-semibold" href="{{ site.url }}{{ l2.path }}">
+              {{ l2.title}}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+
+        <div class="dropdown is-hoverable is-right is-hidden-touch">
+          <div class="dropdown-trigger">
+            <a class="navbar-item">
+              <span class="icon">
+                <img src="{{ site.url }}/assets/images/icon-weixin{% if include.opposite_color %}-o{% endif %}.svg">
+              </span>
+            </a>
+          </div>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <img src="{{ site.url }}/assets/images/icon-weixin-mp.png">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
